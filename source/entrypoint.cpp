@@ -27,7 +27,7 @@ int main(int argc, char* arguments[])
 			{
 				char* fileName = arguments[i + 2]; // 1 for filename, 1 for actual filec
 				const char test_code[] = "#include <io>\n/*Testing Comment*/\nint main() {\nprintc(\"Hello World\") return 0; }";
-				parse_source(test_code);
+				std::vector<Token> tokens = parse_source(test_code);
 			}
 		}
 	}

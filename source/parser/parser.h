@@ -2,10 +2,20 @@
 #include <vector>
 #include <string>
 
+enum TokenTypes
+{
+	TypeDefinition, // int, bool, char, void
+	Integer,		// 0-9
+	Boolean,		// true or false 
+	Symbol,			// + ! ( ) 
+	String,			// Self explanatory 
+	Operation,		// return
+};
+
 struct Token
 {
-	// TODO; type
+	TokenTypes type;
 	std::string source;
 };
 
-void parse_source(const char source[]);
+std::vector<Token> parse_source(const char source[]);
